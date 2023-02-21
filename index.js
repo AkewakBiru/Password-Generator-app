@@ -19,9 +19,7 @@ const randomString = (length) => {
         randNum = Math.floor(Math.random() * gen.length)
         genStr.push(gen[randNum])
         gen.splice(randNum, 1)
-        console.log(gen.length)
         var joined = gen.join('')
-        console.log(joined)
     }
     return genStr.join('');
 }
@@ -41,7 +39,7 @@ const copy_pass = () => {
 var form = document.querySelector("#generate")
 form.addEventListener('submit', (e) => {
     e.preventDefault()
-    let length = Number(e.path[0][0].value)
+    let length = Number(document.querySelector("#length").value)
     let password = randomString(length)
     var generatedPass = document.querySelector(".gen--pass")
     generatedPass.textContent = ""
